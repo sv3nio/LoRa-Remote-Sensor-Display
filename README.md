@@ -21,25 +21,25 @@ This is not beginner project and will require manual editing to get working. Her
 
 - Plan ahead. Make a list of every sensor the display should report and assign it a four-character name and a number. Enter this information into the sketch:
 
-`
+```
     uint8_t sensID[]   = {101};  
     char sensName[][5] = {"SANA"};
-`
+```
 
 - Get familiar with the datagram format (`stnID, sensID, Batt, Data1, Data2`) and decide which field will contain the primary and secondary values (make a note of this for the sensors). Presently, the sketch assumes the use of two data points per sensor. If your sensor(s) won't report a second value then update the display queue to omit this information:
 
-`
+```
     // Data 2 (disp)  
     if ((x == 3) && (data_disp == 1) && (scr_pwr == 1)) {  
       sprintf(msg, "h%i  ", data[x]);  
       set_display(msg);  
       Serial.print("  Data2: "); Serial.print(data[x]); Serial.println("%");  
     }
-`
+```
 
 - Update the warning/error conditions for each data point. This is fully customizable to differentiate between sensors (since each sensor has a unique ID) and/or data fields. Presently, the sketch assumes only one temperature sensor:
 
-`
+```
     if ((data[x] >= 87) && (data[x] <= 150)) {  
       Serial.println("    --> Warning: Sauna temp is high! <--");  
       warn_display(2, (char*)"SANA", (char*)"TEMP", (char*)"WARN");  
@@ -48,7 +48,7 @@ This is not beginner project and will require manual editing to get working. Her
       Serial.println("    --> Warning: Sauna sensor failure! <--");  
       warn_display(2, (char*)"SANA", (char*)"SENS", (char*)"FAIL");  
     }
-`
+```
 
 ### Security
 
@@ -71,24 +71,24 @@ This is where the information the Display Station is expecting gets collected, a
 
 - Hardware: decide on the sensor type and get the sensor reporting accurate values in the Arduino serial terminal.
 
-`
+```
     // Load the sensor driver  
     Adafruit_SHT31 sht31 = Adafruit_SHT31();  
 
     // Take a reading  
     uint8_t temperatureC = sht31.readTemperature();  
-`
+```
 
 - Protocol: if the sensor only produces a single value (and/or there is only one sensor), then place that value into the first data field in the datagram. If there is a second value, place it in the second field:
 
-`
+```
     // Send the reply  
     uint8_t packet[] = {stationID, sensorID, sensorBatt, temperatureC, humidity};
-`
+```
 
 - Features: does the unit use a battery? If not, then leave the section disabled:
 
-`
+```
     // Battery  
     // float measuredvbat = analogRead(VBATPIN);  
     // measuredvbat      *= 2;          // Multiply by 2  
@@ -97,6 +97,6 @@ This is where the information the Display Station is expecting gets collected, a
     // Serial.print("   Batt:     "); Serial.print(sensorBatt); Serial.println("%");  
     Serial.print("   Batt:     "); Serial.println("Not installed/Set to 100%");  
     uint8_t sensorBatt = 100;
-`
-- Once the Sensor and Display Station are complete, they should communicate and the display will show the relevant values.
+```
 
+- Once the Sensor and Display Station are complete, they should communicate and the display will show the relevant values.
