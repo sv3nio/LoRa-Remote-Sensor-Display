@@ -1,6 +1,6 @@
 # LoRa Remote Sensor Display
 
-An extensible, LoRa based remote monitor system powered by the [Adafruit Feather M0 RFM96 LoRa](https://www.adafruit.com/product/3179). The project is comprised of two parts: a Display Station and any number of Sensors.
+An extensible, LoRa based remote monitor system powered by the [Adafruit Feather M0 RFM96 LoRa](https://www.adafruit.com/product/3179) microcontroller. The project is comprised of two parts: a Display Station and any number of Sensors.
 
 ## Display Station
 
