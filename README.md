@@ -6,7 +6,7 @@ An extensible, LoRa based remote monitor system powered by the [Adafruit Feather
 
 Built using the Adafruit [Feather M0 RFM96 LoRa](https://www.adafruit.com/product/3179) and the [0.54" Quad Alphanumeric FeatherWing Display](https://www.adafruit.com/product/3127), the display station maintains an internal list of all known sensors and cycles between them, making requests and displaying results as it goes.
 
-### Features
+### Key Features
 
 - Time-based cycling between sensors. Supports simple characters for things like humidity, temp, etc.
 - Signal strength detection with warning and indicators for weak signal strength.
