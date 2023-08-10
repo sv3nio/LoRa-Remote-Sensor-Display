@@ -56,7 +56,7 @@ Given the remote deployment of this project and the non-sensitive data it report
 
 ## Sensor(s)
 
-Sensors are simple devices that listen for a request from the Display Station and, if valid, take a reading and report back. Currently, the sketch is designed for a single SHT31 digital temp/humidity sensor with support for reporting battery status and more.
+Sensors are simple devices that listen for a request from the Display Station and, if valid, take a reading and report back. Currently, the sketch is designed for a single SHT31 digital temp/humidity sensor with support for reporting battery status (and more), but may be customized with any compatible sensor.
 
 ### Key Features
 
