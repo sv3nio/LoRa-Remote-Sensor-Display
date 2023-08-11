@@ -2,9 +2,13 @@
 
 An extensible, LoRa based remote monitor system powered by the [Adafruit Feather M0 RFM96 LoRa](https://www.adafruit.com/product/3179) microcontroller. The project is comprised of two parts: a Display Station and any number of Sensors.
 
+<img alt="LoRa Remote Sensor Display" src="/img/lora-remote-sensory-display.jpg" width=400><br/>
+
 ## Display Station
 
 Built using the Adafruit [Feather M0 RFM96 LoRa](https://www.adafruit.com/product/3179) and the [0.54" Quad Alphanumeric FeatherWing Display](https://www.adafruit.com/product/3127), the display station maintains an internal list of all known sensors and cycles between them, making requests and displaying results as it goes.
+
+<img alt="Display Station" src="/img/display-station.jpg" width=200><br/>
 
 ### Key Features
 
@@ -57,6 +61,8 @@ Given the remote deployment of this project and the non-sensitive data it report
 ## Sensor
 
 Sensors are simple devices that listen for a request from the Display Station and, if valid, take a reading and report back. Currently, the sketch is designed for a single SHT31 digital temp/humidity sensor with support for reporting battery status (and more), but may be customized with any compatible sensor.
+
+<img alt="Sensor Unit" src="/img/temp-sensor.jpg" width=200><br/>
 
 ### Key Features
 
